@@ -6,7 +6,7 @@
 <title>Gita Jungle Adventure Park – Grest 2026</title>
 
 <meta property="og:title" content="Gita Jungle Adventure Park – Grest 2026">
-<meta property="og:description" content="Mercoledì 2 settembre 2026 – Adesioni alla gita al parco avventura di San Zeno di Montagna.">
+<meta property="og:description" content="Mercoledì 2 settembre 2026 – Adesioni alla gita al parco avventura di San Zeno di Montagna. Iscrizioni entro lunedì 31 agosto.">
 <meta property="og:image" content="https://anspi-castellucchio.github.io/gitagrest/og-preview.png">
 <meta property="og:url" content="https://anspi-castellucchio.github.io/gitagrest/">
 <meta property="og:type" content="website">
@@ -92,7 +92,13 @@
   .info-blocco h3 { font-family:'Nunito',sans-serif; font-weight:800; font-size:16px; color:var(--blu-scuro); margin-bottom:12px; text-transform:uppercase; letter-spacing:0.5px; }
   .riga-info { display:flex; gap:12px; padding:7px 0; border-bottom:1px solid rgba(8,112,183,0.12); font-size:16px; }
   .riga-info:last-child { border-bottom:none; }
-  .riga-info .etichetta { font-weight:700; color:var(--blu); min-width:105px; }
+  .riga-info .etichetta { font-weight:700; color:var(--blu); min-width:130px; }
+
+  .box-scadenza {
+    background:#FFEBEE; border-left:4px solid var(--rosso);
+    border-radius:var(--raggio-sm); padding:16px 18px; margin-bottom:18px;
+    font-size:17px; font-weight:700; color:var(--rosso); text-align:center;
+  }
 
   .box-requisiti {
     background:#FFF8E1; border-left:4px solid #FF9800;
@@ -212,13 +218,17 @@
       <div class="date">Mercoledì 2 settembre 2026</div>
     </div>
 
+    <div class="box-scadenza">
+      ⏰ Adesioni entro lunedì 31 agosto alle ore 14.00
+    </div>
+
     <div class="info-blocco">
       <h3>Programma della giornata</h3>
-      <div class="riga-info"><span class="etichetta">Ore 7.30</span><span>Ritrovo al Palazzetto dello Sport</span></div>
+      <div class="riga-info"><span class="etichetta">Ore 7.30</span><span>Ritrovo in Piazza Morselli (Black Coffee)</span></div>
       <div class="riga-info"><span class="etichetta">Ore 8.00</span><span>Partenza in pullman</span></div>
       <div class="riga-info"><span class="etichetta">Ore 9.30</span><span>Arrivo al Jungle Adventure Park</span></div>
-      <div class="riga-info"><span class="etichetta">Ore 17.30</span><span>Partenza per il rientro</span></div>
-      <div class="riga-info"><span class="etichetta">Ore 19.00</span><span>Rientro previsto in Oratorio</span></div>
+      <div class="riga-info"><span class="etichetta">Ore 16.30–17.00</span><span>Partenza per il rientro</span></div>
+      <div class="riga-info"><span class="etichetta">Ore 18.00–18.30</span><span>Rientro previsto</span></div>
     </div>
 
     <div class="box-requisiti">
@@ -228,7 +238,7 @@
     </div>
 
     <div class="box-costo">
-      💰 Quota: <strong>€25,00</strong> da versare entro martedì 01.09<br>
+      💰 Quota: <strong>€20,00</strong> da versare entro martedì 1 settembre<br>
       <span style="font-size:15px;color:var(--testo-sec);">Comprensiva di ingresso al parco e trasporto in pullman. La quota è la stessa anche per gli animatori.</span>
     </div>
 
@@ -302,15 +312,15 @@
     <div class="riepilogo-dati">
       <h3>Riepilogo</h3>
       <div class="riepilogo-riga"><span class="lbl">Data</span><span class="val">Mercoledì 2 settembre 2026</span></div>
-      <div class="riepilogo-riga"><span class="lbl">Ritrovo</span><span class="val">Ore 7.30 – Palazzetto dello Sport</span></div>
+      <div class="riepilogo-riga"><span class="lbl">Ritrovo</span><span class="val">Ore 7.30 – Piazza Morselli</span></div>
       <div class="riepilogo-riga"><span class="lbl">Partenza</span><span class="val">Ore 8.00</span></div>
-      <div class="riepilogo-riga"><span class="lbl">Rientro</span><span class="val">Ore 19.00 in Oratorio</span></div>
+      <div class="riepilogo-riga"><span class="lbl">Rientro</span><span class="val">Ore 18.00–18.30</span></div>
       <div class="riepilogo-riga"><span class="lbl">Altezza indicata</span><span class="val" id="altezzaConferma"></span></div>
     </div>
 
     <div class="info-box">
       <h3>Pagamento</h3>
-      <p>La quota è di <strong>€25,00</strong>, comprensiva di ingresso e pullman, da versare entro <strong>martedì 1 settembre</strong>.</p>
+      <p>La quota è di <strong>€20,00</strong>, comprensiva di ingresso e pullman, da versare entro <strong>martedì 1 settembre</strong>.</p>
       <p style="margin-top:8px;">Puoi pagare:</p>
       <ul>
         <li>
@@ -342,7 +352,7 @@
 </div>
 
 <script>
-const WEBAPP_URL = "https://script.google.com/macros/s/AKfycby6eozCActH2zMuR4tzt2KRo8JByLYVKVqp02yBOmuLoklNGy5kSCfB7OZRNLBHltO2-A/exec";
+const WEBAPP_URL = "WEBAPP_URL_DA_INSERIRE";
 const ANNO_MASSIMO = 2018;   // nati nel 2018 o prima
 const ALTEZZA_MINIMA = 100;  // cm
 
