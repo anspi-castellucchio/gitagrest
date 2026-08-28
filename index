@@ -342,7 +342,7 @@
 </div>
 
 <script>
-const WEBAPP_URL = "WEBAPP_URL_DA_INSERIRE";
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbx7gXWDrEXtURxXWLs74wEcJy9nIydGY-rDzc-b8TAPjFmNdL-3XJZNMBjGUb6nfCI-/exec";
 const ANNO_MASSIMO = 2018;   // nati nel 2018 o prima
 const ALTEZZA_MINIMA = 100;  // cm
 
