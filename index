@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gita Jungle Adventure Park – Grest 2026</title>
+
+<meta property="og:title" content="Gita Jungle Adventure Park – Grest 2026">
+<meta property="og:description" content="Mercoledì 2 settembre 2026 – Adesioni alla gita al parco avventura di San Zeno di Montagna.">
+<meta property="og:image" content="https://anspi-castellucchio.github.io/gitagrest/og-preview.png">
+<meta property="og:url" content="https://anspi-castellucchio.github.io/gitagrest/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blu: #0870b7;
+    --blu-chiaro: #2a90d0;
+    --blu-scuro: #055a96;
+    --blu-pallido: #e6f3fb;
+    --arancio: #ff8427;
+    --arancio-scuro: #e06b10;
+    --verde: #2E7D32;
+    --rosso: #C62828;
+    --grigio: #F5F7FA;
+    --grigio-bordo: #DDE3EA;
+    --testo: #1A2332;
+    --testo-sec: #5A6A7E;
+    --bianco: #FFFFFF;
+    --ombra: 0 4px 20px rgba(8,112,183,0.10);
+    --raggio: 16px;
+    --raggio-sm: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    background: linear-gradient(135deg, #e6f3fb 0%, #F5F7FA 60%, #e6f3fb 100%);
+    min-height: 100vh;
+    color: var(--testo);
+  }
+
+  .header {
+    background: var(--bianco);
+    border-bottom: 3px solid var(--blu);
+    padding: 16px 24px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(8,112,183,0.08);
+  }
+  .header img.logo-anspi { height: 65px; display: block; margin: 0 auto 8px; }
+  .header-intestazione { font-size: 14px; color: var(--testo-sec); line-height: 1.7; }
+
+  .container { max-width: 700px; margin: 28px auto; padding: 0 16px 60px; }
+
+  .progress-wrap {
+    background: var(--bianco); border-radius: 50px;
+    padding: 6px 8px; box-shadow: var(--ombra);
+    margin-bottom: 24px; display: flex; align-items: center; gap: 4px;
+  }
+  .step-dot { flex: 1; height: 9px; border-radius: 50px; background: var(--grigio-bordo); transition: background 0.4s; }
+  .step-dot.attivo     { background: var(--arancio); }
+  .step-dot.completato { background: var(--blu); }
+
+  .card {
+    background: var(--bianco); border-radius: var(--raggio);
+    box-shadow: var(--ombra); padding: 28px; margin-bottom: 20px;
+    animation: slideIn 0.3s ease;
+  }
+  @keyframes slideIn { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+
+  .card-titolo { font-family:'Nunito',sans-serif; font-size:27px; font-weight:900; color:var(--blu-scuro); margin-bottom:6px; }
+  .card-sottotitolo { font-size:17px; color:var(--testo-sec); margin-bottom:24px; line-height:1.5; }
+
+  .badge-evento {
+    background: var(--blu);
+    color: var(--bianco); border-radius: var(--raggio);
+    padding: 26px 24px; margin-bottom: 20px; text-align: center;
+  }
+  .badge-evento .logo-jungle {
+    height: 190px; display: block; margin: 0 auto 18px; max-width: 100%;
+    background: var(--bianco); border-radius: 50%; padding: 10px;
+  }
+  .badge-evento .occhiello { font-size:14px; opacity:0.85; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px; }
+  .badge-evento h1 { font-family:'Nunito',sans-serif; font-size:30px; font-weight:900; margin-bottom:6px; line-height:1.2; }
+  .badge-evento .luogo { font-size:17px; opacity:0.92; margin-bottom:4px; }
+  .badge-evento .date { font-size:19px; font-weight:700; margin-top:12px; }
+
+  .info-blocco { background:var(--blu-pallido); border-radius:var(--raggio-sm); padding:18px; margin-bottom:18px; }
+  .info-blocco h3 { font-family:'Nunito',sans-serif; font-weight:800; font-size:16px; color:var(--blu-scuro); margin-bottom:12px; text-transform:uppercase; letter-spacing:0.5px; }
+  .riga-info { display:flex; gap:12px; padding:7px 0; border-bottom:1px solid rgba(8,112,183,0.12); font-size:16px; }
+  .riga-info:last-child { border-bottom:none; }
+  .riga-info .etichetta { font-weight:700; color:var(--blu); min-width:105px; }
+
+  .box-requisiti {
+    background:#FFF8E1; border-left:4px solid #FF9800;
+    border-radius:var(--raggio-sm); padding:16px 18px; margin-bottom:18px; font-size:16px; line-height:1.6;
+  }
+  .box-requisiti strong { color:var(--arancio-scuro); }
+
+  .box-costo {
+    background:var(--blu-pallido); border-left:4px solid var(--arancio);
+    border-radius:var(--raggio-sm); padding:16px 18px; margin-bottom:22px; font-size:17px;
+  }
+
+  .field-group { margin-bottom:20px; }
+  .field-group label { display:block; font-size:15px; font-weight:700; color:var(--testo-sec); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.4px; }
+  .field-group input,
+  .field-group select {
+    width:100%; padding:14px 14px;
+    border:2px solid var(--grigio-bordo); border-radius:var(--raggio-sm);
+    font-size:18px; font-family:'Lato',sans-serif; color:var(--testo);
+    background:var(--grigio); transition:border-color 0.2s, background 0.2s;
+    outline:none; -webkit-appearance:none; appearance:none;
+  }
+  .field-group input:focus, .field-group select:focus { border-color:var(--blu-chiaro); background:var(--bianco); }
+  .field-group input.errore { border-color:var(--rosso); }
+  .field-group input:disabled { background:#EDF1F5; color:var(--testo-sec); }
+  .msg-errore { font-size:15px; color:var(--rosso); margin-top:4px; min-height:18px; }
+  .hint { font-size:14px; color:var(--testo-sec); margin-top:6px; font-style:italic; line-height:1.5; }
+
+  .row-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
+  .cf-wrap { position:relative; }
+  .cf-wrap input { padding-right:125px; }
+  .cf-btn {
+    position:absolute; right:6px; top:50%; transform:translateY(-50%);
+    background:var(--arancio); color:var(--bianco); border:none;
+    border-radius:8px; padding:9px 16px; font-size:16px; font-weight:700;
+    cursor:pointer; transition:background 0.2s; white-space:nowrap;
+  }
+  .cf-btn:hover { background:var(--arancio-scuro); }
+  .cf-btn:disabled { opacity:0.6; cursor:not-allowed; }
+
+  .alert { border-radius:var(--raggio-sm); padding:15px 16px; font-size:17px; margin-bottom:18px; line-height:1.5; display:none; }
+  .alert.show-info    { display:block; background:var(--blu-pallido); color:var(--blu-scuro); border-left:4px solid var(--blu); }
+  .alert.show-success { display:block; background:#E8F5E9; color:var(--verde); border-left:4px solid var(--verde); }
+  .alert.show-error   { display:block; background:#FFEBEE; color:var(--rosso); border-left:4px solid var(--rosso); }
+
+  .riepilogo-dati { background:var(--grigio); border-radius:var(--raggio-sm); padding:18px; margin-bottom:20px; }
+  .riepilogo-dati h3 { font-family:'Nunito',sans-serif; font-weight:800; font-size:16px; color:var(--blu-scuro); margin-bottom:10px; text-transform:uppercase; }
+  .riepilogo-riga { display:flex; justify-content:space-between; gap:12px; font-size:16px; padding:6px 0; border-bottom:1px solid var(--grigio-bordo); }
+  .riepilogo-riga:last-child { border-bottom:none; }
+  .riepilogo-riga .lbl { color:var(--testo-sec); }
+  .riepilogo-riga .val { font-weight:700; text-align:right; }
+
+  .btn-wrap { display:flex; justify-content:space-between; align-items:center; margin-top:24px; gap:10px; }
+  .btn { padding:15px 28px; border-radius:var(--raggio-sm); font-size:18px; font-weight:700; font-family:'Nunito',sans-serif; cursor:pointer; border:none; transition:all 0.2s; }
+  .btn-primario { background:var(--arancio); color:var(--bianco); flex:1; max-width:280px; }
+  .btn-primario:hover { background:var(--arancio-scuro); transform:translateY(-1px); box-shadow:0 4px 14px rgba(255,132,39,0.35); }
+  .btn-sec { background:var(--grigio); color:var(--testo-sec); border:2px solid var(--grigio-bordo); }
+  .btn-sec:hover { border-color:var(--blu-chiaro); color:var(--blu); }
+  .btn:disabled { opacity:0.5; cursor:not-allowed; transform:none !important; }
+
+  .spinner { display:inline-block; width:17px; height:17px; border:3px solid rgba(255,255,255,0.3); border-top-color:#fff; border-radius:50%; animation:spin 0.8s linear infinite; vertical-align:middle; margin-right:6px; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+
+  .conferma-hero { text-align:center; padding:24px 0 20px; }
+  .conferma-icona { width:76px; height:76px; background:linear-gradient(135deg,var(--blu-scuro),var(--blu)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:34px; color:#ffffff; }
+  .conferma-hero h2 { font-family:'Nunito',sans-serif; font-size:28px; font-weight:900; color:var(--blu-scuro); margin-bottom:8px; }
+  .conferma-hero p { font-size:17px; color:var(--testo-sec); line-height:1.6; }
+  .info-box { background:var(--grigio); border-radius:var(--raggio-sm); padding:18px; margin-top:16px; }
+  .info-box h3 { font-family:'Nunito',sans-serif; font-weight:800; font-size:17px; color:var(--testo); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.4px; }
+  .info-box p, .info-box li { font-size:16px; color:var(--testo-sec); line-height:1.6; }
+  .info-box ul { padding-left:18px; margin-top:6px; }
+  .info-box strong { color:var(--testo); }
+  .info-box a { color:var(--blu); font-weight:600; }
+  .iban-box { background:var(--blu-pallido); border-radius:8px; padding:13px 16px; margin-top:8px; font-size:16px; }
+  .iban-box strong { display:block; color:var(--blu-scuro); font-size:14px; text-transform:uppercase; margin-bottom:2px; margin-top:7px; }
+  .iban-box strong:first-child { margin-top:0; }
+
+  @media (max-width:520px) {
+    body { font-size: 17px; }
+    .row-2 { grid-template-columns:1fr; }
+    .card { padding:20px; }
+    .btn-wrap { flex-direction:column-reverse; }
+    .btn-primario, .btn-sec { max-width:100%; width:100%; }
+    .badge-evento h1 { font-size:25px; }
+    .badge-evento .logo-jungle { height:150px; }
+    .riga-info { flex-direction:column; gap:2px; }
+    .riga-info .etichetta { min-width:auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img class="logo-anspi" src="ANSPI%20Castellucchio%20_%20Logo%404x.png" alt="Logo ANSPI Castellucchio">
+  <div class="header-intestazione">
+    Associazione Santa Chiara e San Francesco ANSPI – APS ETS<br>
+    Via Roma 29 – 46014 Castellucchio MN &nbsp;|&nbsp; Tel. 0376 438106 &nbsp;|&nbsp; CF 93067410204
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="progress-wrap" id="progressBar">
+    <div class="step-dot attivo" id="dot0"></div>
+    <div class="step-dot" id="dot1"></div>
+    <div class="step-dot" id="dot2"></div>
+  </div>
+
+  <!-- STEP 0: BENVENUTO -->
+  <div id="step0" class="card">
+    <div class="badge-evento">
+      <img class="logo-jungle" src="logo-jungle.png" alt="Jungle Adventure Park">
+      <div class="occhiello">Grest Castellucchio 2026</div>
+      <h1>Jungle Adventure Park</h1>
+      <div class="luogo">San Zeno di Montagna (VR)</div>
+      <div class="date">Mercoledì 2 settembre 2026</div>
+    </div>
+
+    <div class="info-blocco">
+      <h3>Programma della giornata</h3>
+      <div class="riga-info"><span class="etichetta">Ore 7.30</span><span>Ritrovo al Palazzetto dello Sport</span></div>
+      <div class="riga-info"><span class="etichetta">Ore 8.00</span><span>Partenza in pullman</span></div>
+      <div class="riga-info"><span class="etichetta">Ore 9.30</span><span>Arrivo al Jungle Adventure Park</span></div>
+      <div class="riga-info"><span class="etichetta">Ore 17.30</span><span>Partenza per il rientro</span></div>
+      <div class="riga-info"><span class="etichetta">Ore 19.00</span><span>Rientro previsto in Oratorio</span></div>
+    </div>
+
+    <div class="box-requisiti">
+      ⚠️ <strong>Requisiti per partecipare</strong><br>
+      La gita è riservata ai ragazzi iscritti al Grest 2026 <strong>nati nel 2018 o prima</strong> e con un'<strong>altezza di almeno 1 metro</strong>.<br><br>
+      Chi non raggiunge <strong>1,40 m con il braccio alzato</strong> potrà accedere solo ai percorsi base del parco.
+    </div>
+
+    <div class="box-costo">
+      💰 Quota: <strong>€25,00</strong> da versare entro martedì 01.09<br>
+      <span style="font-size:15px;color:var(--testo-sec);">Comprensiva di ingresso al parco e trasporto in pullman. La quota è la stessa anche per gli animatori.</span>
+    </div>
+
+    <div style="background:var(--grigio);border-radius:var(--raggio-sm);padding:16px 18px;margin-bottom:22px;font-size:16px;line-height:1.6;color:var(--testo-sec);">
+      Ti chiederemo il <strong style="color:var(--testo);">codice fiscale</strong> del/la partecipante per recuperare i dati già inseriti all'iscrizione al Grest. Dovrai indicare solo l'altezza.
+    </div>
+
+    <div class="btn-wrap" style="justify-content:flex-end;">
+      <button class="btn btn-primario" onclick="vaiStep(1)">Inizia l'adesione →</button>
+    </div>
+  </div>
+
+  <!-- STEP 1: CF + ALTEZZA -->
+  <div id="step1" class="card" style="display:none;">
+    <div class="card-titolo">Dati del partecipante</div>
+    <div class="card-sottotitolo">Inserisci il codice fiscale per recuperare i dati dall'iscrizione al Grest.</div>
+
+    <div id="alertCF" class="alert"></div>
+
+    <div class="field-group">
+      <label>Codice fiscale *</label>
+      <div class="cf-wrap">
+        <input type="text" id="cfInput" placeholder="es. RSSMRA18A01E897X" maxlength="16"
+               autocomplete="off" oninput="this.value=this.value.toUpperCase()"
+               onkeydown="if(event.key==='Enter') cercaCF()">
+        <button class="cf-btn" id="cfBtn" onclick="cercaCF()">Verifica</button>
+      </div>
+      <div class="msg-errore" id="errCF"></div>
+    </div>
+
+    <div id="bloccoDati" style="display:none;">
+      <div class="row-2">
+        <div class="field-group">
+          <label>Cognome</label>
+          <input type="text" id="cognome" disabled>
+        </div>
+        <div class="field-group">
+          <label>Nome</label>
+          <input type="text" id="nome" disabled>
+        </div>
+      </div>
+      <div class="row-2">
+        <div class="field-group">
+          <label>Anno di nascita</label>
+          <input type="text" id="annoNascita" disabled>
+        </div>
+        <div class="field-group">
+          <label>Altezza in cm *</label>
+          <input type="text" id="altezza" placeholder="es. 145" maxlength="3" inputmode="numeric"
+                 oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+          <div class="msg-errore" id="errAltezza"></div>
+          <div class="hint">Indica l'altezza del/la partecipante in centimetri (minimo 100 cm).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-wrap">
+      <button class="btn btn-sec" onclick="vaiStep(0)">← Indietro</button>
+      <button class="btn btn-primario" id="btnInvia" onclick="inviaAdesione()">Conferma adesione ✓</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: CONFERMA -->
+  <div id="step2" class="card" style="display:none;">
+    <div class="conferma-hero">
+      <div class="conferma-icona">✓</div>
+      <h2>Adesione registrata!</h2>
+      <p>L'adesione di <strong id="nomeConferma"></strong> alla gita al Jungle Adventure Park è stata registrata con successo.</p>
+    </div>
+
+    <div class="riepilogo-dati">
+      <h3>Riepilogo</h3>
+      <div class="riepilogo-riga"><span class="lbl">Data</span><span class="val">Mercoledì 2 settembre 2026</span></div>
+      <div class="riepilogo-riga"><span class="lbl">Ritrovo</span><span class="val">Ore 7.30 – Palazzetto dello Sport</span></div>
+      <div class="riepilogo-riga"><span class="lbl">Partenza</span><span class="val">Ore 8.00</span></div>
+      <div class="riepilogo-riga"><span class="lbl">Rientro</span><span class="val">Ore 19.00 in Oratorio</span></div>
+      <div class="riepilogo-riga"><span class="lbl">Altezza indicata</span><span class="val" id="altezzaConferma"></span></div>
+    </div>
+
+    <div class="info-box">
+      <h3>Pagamento</h3>
+      <p>La quota è di <strong>€25,00</strong>, comprensiva di ingresso e pullman, da versare entro <strong>martedì 1 settembre</strong>.</p>
+      <p style="margin-top:8px;">Puoi pagare:</p>
+      <ul>
+        <li>
+          <strong>Tramite bonifico bancario</strong>
+          <div class="iban-box">
+            <strong>Intestato a</strong>Circolo ANSPI Santa Chiara e San Francesco
+            <strong>IBAN</strong>IT40P0834057560000000360432
+            <strong>Causale</strong><span id="causaleConferma"></span>
+          </div>
+        </li>
+        <li style="margin-top:8px;"><strong>In contanti</strong> in Oratorio</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <h3>Cosa portare</h3>
+      <ul>
+        <li>Abbigliamento comodo e scarpe da ginnastica o trekking</li>
+        <li>Pranzo al sacco e borraccia</li>
+        <li>Cappellino e crema solare</li>
+      </ul>
+    </div>
+
+    <div class="info-box" style="text-align:center;">
+      <p style="font-size:15px;">Per informazioni: <a href="mailto:oratoriocastellucchio5@gmail.com">oratoriocastellucchio5@gmail.com</a><br>Tel. 0376 438106 &nbsp;|&nbsp; Via Roma 29, Castellucchio MN</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const WEBAPP_URL = "WEBAPP_URL_DA_INSERIRE";
+const ANNO_MASSIMO = 2018;   // nati nel 2018 o prima
+const ALTEZZA_MINIMA = 100;  // cm
+
+let stepCorrente = 0;
+const TOTALE_STEP = 3;
+
+let stato = { trovato: false, dati: null };
+
+function vaiStep(n) {
+  document.getElementById("step" + stepCorrente).style.display = "none";
+  stepCorrente = n;
+  document.getElementById("step" + stepCorrente).style.display = "block";
+  for (let i = 0; i < TOTALE_STEP; i++) {
+    const d = document.getElementById("dot" + i);
+    if (!d) continue;
+    d.className = "step-dot" + (i < n ? " completato" : i === n ? " attivo" : "");
+  }
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function mostraAlert(id, tipo, testo) {
+  const el = document.getElementById(id);
+  el.className = "alert show-" + tipo;
+  el.innerHTML = testo;
+}
+function nascondiAlert(id) { document.getElementById(id).className = "alert"; }
+
+function annoDaDataNascita(dn) {
+  if (!dn) return null;
+  const s = dn.toString().trim();
+  let m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (m) return parseInt(m[3], 10);
+  m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (m) return parseInt(m[1], 10);
+  return null;
+}
+
+async function cercaCF() {
+  const cf = document.getElementById("cfInput").value.trim().toUpperCase();
+  document.getElementById("errCF").textContent = "";
+  nascondiAlert("alertCF");
+  document.getElementById("bloccoDati").style.display = "none";
+  stato = { trovato: false, dati: null };
+
+  if (!cf || cf.length !== 16 || !/^[A-Z0-9]{16}$/.test(cf)) {
+    document.getElementById("errCF").textContent = "Il codice fiscale deve essere di 16 caratteri alfanumerici";
+    return;
+  }
+
+  const btn = document.getElementById("cfBtn");
+  btn.textContent = "Ricerca..."; btn.disabled = true;
+
+  try {
+    const res  = await fetch(WEBAPP_URL, { method:"POST", body:JSON.stringify({ azione:"cercaIscritto", cf }) });
+    const data = await res.json();
+
+    if (!data.ok) {
+      mostraAlert("alertCF", "error", "Errore: " + (data.errore || "riprova più tardi"));
+      return;
+    }
+
+    if (!data.trovato) {
+      mostraAlert("alertCF", "error",
+        "Questo codice fiscale non risulta iscritto al Grest 2026. La gita è riservata ai partecipanti del Grest. Se pensi ci sia un errore, contattaci.");
+      return;
+    }
+
+    const d = data.dati;
+    const anno = annoDaDataNascita(d.dataNasc);
+
+    if (!anno) {
+      mostraAlert("alertCF", "error", "Non riusciamo a leggere la data di nascita. Contattaci per completare l'adesione.");
+      return;
+    }
+
+    if (anno > ANNO_MASSIMO) {
+      mostraAlert("alertCF", "error",
+        `Ci dispiace: la gita è riservata ai nati nel <strong>${ANNO_MASSIMO}</strong> o prima. <strong>${d.nome} ${d.cognome}</strong> è nato/a nel <strong>${anno}</strong> e non può partecipare a questa uscita.`);
+      return;
+    }
+
+    stato.trovato = true;
+    stato.dati = { ...d, anno };
+
+    document.getElementById("cognome").value     = d.cognome || "";
+    document.getElementById("nome").value        = d.nome || "";
+    document.getElementById("annoNascita").value = anno;
+    document.getElementById("bloccoDati").style.display = "block";
+
+    mostraAlert("alertCF", "success",
+      "✓ Iscritto trovato! Indica l'altezza per completare l'adesione.");
+
+  } catch(e) {
+    console.error(e);
+    mostraAlert("alertCF", "error", "Errore di connessione. Riprova.");
+  } finally {
+    btn.textContent = "Verifica"; btn.disabled = false;
+  }
+}
+
+async function inviaAdesione() {
+  const errAlt = document.getElementById("errAltezza");
+  const btn = document.getElementById("btnInvia");
+
+  if (!stato.trovato) {
+    document.getElementById("errCF").textContent = "Verifica prima il codice fiscale";
+    return;
+  }
+
+  const alt = parseInt(document.getElementById("altezza").value.trim(), 10);
+  if (!alt || isNaN(alt)) { errAlt.textContent = "Indica l'altezza in centimetri"; return; }
+  if (alt < ALTEZZA_MINIMA) {
+    errAlt.textContent = `L'altezza minima per partecipare è di ${ALTEZZA_MINIMA} cm`;
+    return;
+  }
+  if (alt > 220) { errAlt.textContent = "Controlla il valore inserito"; return; }
+  errAlt.textContent = "";
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Invio in corso...';
+
+  const payload = {
+    azione: "salvaAdesione",
+    dati: {
+      cf:        stato.dati.cf,
+      sesso:     stato.dati.sesso || "",
+      cognome:   stato.dati.cognome,
+      nome:      stato.dati.nome,
+      anno:      stato.dati.anno,
+      ruolo:     stato.dati.ruolo || "",
+      email:     stato.dati.email || "",
+      cellG1:    stato.dati.cellG1 || "",
+      nomeG1:    stato.dati.nomeG1 || "",
+      cognomeG1: stato.dati.cognomeG1 || "",
+      altezza:   alt,
+    }
+  };
+
+  try {
+    const res  = await fetch(WEBAPP_URL, { method:"POST", body:JSON.stringify(payload) });
+    const data = await res.json();
+
+    if (data.ok) {
+      document.getElementById("nomeConferma").textContent    = `${stato.dati.nome} ${stato.dati.cognome}`;
+      document.getElementById("altezzaConferma").textContent = alt + " cm";
+      document.getElementById("causaleConferma").textContent = `Gita Jungle ${stato.dati.cognome} ${stato.dati.nome}`;
+      document.getElementById("progressBar").style.display = "none";
+      vaiStep(2);
+    } else {
+      mostraAlert("alertCF", "error", "Errore: " + (data.errore || "riprova più tardi"));
+      btn.disabled = false; btn.textContent = "Conferma adesione ✓";
+    }
+  } catch(e) {
+    mostraAlert("alertCF", "error", "Errore di connessione. Riprova tra qualche istante.");
+    btn.disabled = false; btn.textContent = "Conferma adesione ✓";
+  }
+}
+</script>
+</body>
+</html>
